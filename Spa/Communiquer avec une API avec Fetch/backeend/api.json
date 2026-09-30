@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "nom": "PHP",
+        "couleur": "Bleu",
+        "icone": "codes"
+    },
+    {
+        "id": 2,
+        "nom": "JavaScript",
+        "couleur": "Jaune",
+        "icone": "js"
+    },
+    {
+        "id": 3,
+        "nom": "Laravel",
+        "couleur": "Rouge",
+        "icone": "laravel"
+    }
+]

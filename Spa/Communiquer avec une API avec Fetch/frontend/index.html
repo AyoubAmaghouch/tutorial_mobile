@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestion des catégories</title>
+</head>
+
+<body>
+
+    <h1>Gestion des catégories</h1>
+
+
+    <h2>Ajouter / Modifier une catégorie</h2>
+
+    <form id="form-categorie">
+
+        <div>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" placeholder="Ex: PHP" required>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="couleur">Couleur :</label>
+            <input type="text" id="couleur" placeholder="Ex: Bleu" required>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="icone">Icône :</label>
+            <input type="text" id="icone" placeholder="Ex: code" required>
+        </div>
+
+        <br>
+
+        <button type="submit">
+            Enregistrer
+        </button>
+
+    </form>
+
+
+    <hr>
+
+
+   
+
+    <h2>Liste des catégories</h2>
+
+    <table border="1">
+
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Couleur</th>
+                <th>Icône</th>
+                <th>Actions</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="table-body">
+        </tbody>
+
+    </table>
+
+
+   
+    <script src="./app.js"></script>
+
+</body>
+
+</html>

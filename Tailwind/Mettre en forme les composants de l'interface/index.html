@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Gestion des catégories</title>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Layout principal -->
+    <div class="flex min-h-screen">
+
+        <!-- SIDEBAR -->
+        <aside class="w-64 bg-gray-800 text-white p-6">
+
+            <h1 class="text-xl font-bold mb-6">
+                Administration
+            </h1>
+
+            <nav class="flex flex-col gap-2">
+
+                <!-- Lien actif -->
+                <a href="#"
+                   class="bg-blue-600 text-white rounded-lg p-3">
+                    Catégories
+                </a>
+
+                <!-- Liens inactifs -->
+                <a href="#"
+                   class="text-gray-300 hover:bg-gray-700 rounded-lg p-3">
+                    Produits
+                </a>
+
+                <a href="#"
+                   class="text-gray-300 hover:bg-gray-700 rounded-lg p-3">
+                    Utilisateurs
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- CONTENU -->
+        <div class="flex-1 flex flex-col">
+
+            <!-- HEADER -->
+            <header class="bg-white shadow-sm border-b p-4">
+
+                <div class="flex items-center justify-between">
+
+                    <h2 class="text-xl font-semibold">
+                        Gestion des catégories
+                    </h2>
+
+                    <span class="text-gray-600">
+                        Admin
+                    </span>
+
+                </div>
+
+            </header>
+
+
+            <!-- MAIN -->
+            <main class="flex-1 p-6">
+
+                <div class="max-w-5xl mx-auto">
+
+                    <!-- TITRE + BOUTON -->
+                    <div class="flex items-center justify-between mb-6">
+
+                        <h2 class="text-2xl font-bold">
+                            Catégories
+                        </h2>
+
+                        <button
+                            id="btn-show-form"
+                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            Nouvelle catégorie
+                        </button>
+
+                    </div>
+
+
+                    <!-- FORMULAIRE -->
+                    <section
+                        id="section-form"
+                        class="bg-white p-6 rounded-lg shadow-sm mb-6">
+
+                        <h3 class="text-lg font-semibold mb-4">
+                            Ajouter une catégorie
+                        </h3>
+
+                        <form id="form-categorie">
+
+                            <div class="mb-4">
+
+                                <label
+                                    for="nom"
+                                    class="block mb-2 font-medium">
+                                    Nom
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nom"
+                                    name="nom"
+                                    class="border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder="Nom de la catégorie">
+
+                            </div>
+
+
+                            <div class="mb-4">
+
+                                <label
+                                    for="couleur"
+                                    class="block mb-2 font-medium">
+                                    Couleur
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="couleur"
+                                    name="couleur"
+                                    class="border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder="Couleur">
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                                Enregistrer
+                            </button>
+
+                        </form>
+
+                    </section>
+
+
+                    <!-- TABLEAU -->
+                    <section class="bg-white rounded-lg shadow-sm overflow-hidden">
+
+                        <table class="w-full">
+
+                            <thead class="bg-gray-50 text-left text-xs text-gray-500 uppercase">
+
+                                <tr>
+
+                                    <th class="p-4">
+                                        ID
+                                    </th>
+
+                                    <th class="p-4">
+                                        Nom
+                                    </th>
+
+                                    <th class="p-4">
+                                        Couleur
+                                    </th>
+
+                                    <th class="p-4">
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="table-body">
+
+                                <tr class="border-b hover:bg-gray-50">
+
+                                    <td class="p-4">
+                                        1
+                                    </td>
+
+                                    <td class="p-4">
+                                        Informatique
+                                    </td>
+
+                                    <td class="p-4">
+                                        Bleu
+                                    </td>
+
+                                    <td class="p-4">
+
+                                        <button class="text-blue-600">
+                                            Modifier
+                                        </button>
+
+                                        <button class="text-red-600 ml-3">
+                                            Supprimer
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr class="border-b hover:bg-gray-50">
+
+                                    <td class="p-4">
+                                        2
+                                    </td>
+
+                                    <td class="p-4">
+                                        Sport
+                                    </td>
+
+                                    <td class="p-4">
+                                        Vert
+                                    </td>
+
+                                    <td class="p-4">
+
+                                        <button class="text-blue-600">
+                                            Modifier
+                                        </button>
+
+                                        <button class="text-red-600 ml-3">
+                                            Supprimer
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </section>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
