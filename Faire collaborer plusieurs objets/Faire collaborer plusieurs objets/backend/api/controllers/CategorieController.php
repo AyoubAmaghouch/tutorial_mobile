@@ -1,12 +1,7 @@
 <?php
-// require_once '../../backend/classes/User.php';
-// require_once '../../backend/classes/Auteur.php';
-require_once '../../backend/classes/GestionCategorie.php';
-
-class CategorieController
-{
-    public function listerCategories(): void
-    {
+require_once __DIR__ . '/../../classes/GestionCategorie.php';
+class CategorieController {
+    public function listerCategories(): void {
         $gestion = new GestionCategorie();
         $categories = $gestion->getAll();
 
@@ -32,11 +27,4 @@ class CategorieController
 
 $controller = new CategorieController();
 $controller->listerCategories();
-
-
-// Test d'exécution
-// $user = new User();
-// $auteur = new Auteur();
-// echo $user->getRoleName();
-// echo "<br>";
-// echo $auteur->getRoleName();
+?>
