@@ -5,6 +5,7 @@ const form = document.getElementById("vehicleForm");
 const vehiclesList = document.getElementById("vehiclesList");
 const btnSubmit = document.getElementById("btn-submit-form");
 
+// 1. Gérer l'état de chargement
 function setLoadingState(isLoading) {
     btnSubmit.disabled = isLoading;
 
@@ -15,10 +16,12 @@ function setLoadingState(isLoading) {
     }
 }
 
+// 2. Délai temporaire pour voir le chargement
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// 3. Récupérer et afficher les véhicules
 async function getVehicles() {
     try {
         const response = await fetch(API_URL);
@@ -58,7 +61,7 @@ async function getVehicles() {
     }
 }
 
-
+// 4. Ajouter un véhicule
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -68,10 +71,11 @@ form.addEventListener("submit", async (event) => {
         annee: document.getElementById("annee").value
     };
 
+    // Début du chargement
     setLoadingState(true);
 
     try {
-    
+        // Délai temporaire pour observer Loading
         await delay(2000);
 
         const response = await fetch(API_URL, {
@@ -105,10 +109,10 @@ form.addEventListener("submit", async (event) => {
         alert("Impossible d'ajouter le véhicule.");
 
     } finally {
-   
+        // Toujours réactiver le bouton
         setLoadingState(false);
     }
 });
 
-
+// 5. Charger les véhicules au démarrage
 getVehicles();
