@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Administration</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Conteneur principal responsive -->
+    <div class="flex flex-col md:flex-row min-h-screen">
+
+        <!-- Sidebar -->
+        <aside class="hidden md:block w-64 shrink-0 bg-slate-900 text-white p-6">
+            <h2 class="text-2xl font-bold mb-6">Mon Blog</h2>
+
+            <nav>
+                <a href="#categories"
+                   class="block py-2 px-4 bg-slate-800 rounded hover:bg-slate-700">
+                    Catégories
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Contenu principal -->
+        <main class="flex-1 min-w-0 p-4 md:p-8">
+
+            <h1 class="text-2xl md:text-3xl font-bold mb-6">
+                Gestion des Catégories
+            </h1>
+
+            <!-- Formulaire responsive -->
+            <form
+                id="form-categorie"
+                class="bg-white p-4 md:p-6 rounded shadow mb-8 grid grid-cols-1 md:grid-cols-2 gap-4"
+            >
+
+                <div>
+                    <label for="nom-categorie"
+                           class="block mb-2 font-medium">
+                        Nom de la catégorie
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nom-categorie"
+                        name="nom"
+                        placeholder="Nom de la catégorie"
+                        class="w-full border border-gray-300 rounded p-3"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="description"
+                           class="block mb-2 font-medium">
+                        Description
+                    </label>
+
+                    <input
+                        type="text"
+                        id="description"
+                        name="description"
+                        placeholder="Description"
+                        class="w-full border border-gray-300 rounded p-3"
+                    >
+                </div>
+
+                <div class="md:col-span-2 mt-2">
+                    <button
+                        type="submit"
+                        id="btn-submit-form"
+                        class="bg-blue-600 text-white px-5 py-3 rounded flex items-center gap-2 hover:bg-blue-700"
+                    >
+                        <span id="spinner-submit" hidden>⏳</span>
+                        <span id="text-submit">Enregistrer</span>
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- Tableau responsive -->
+            <section id="categories">
+
+                <h2 class="text-xl font-bold mb-4">
+                    Liste des catégories
+                </h2>
+
+                <div class="overflow-x-auto bg-white p-4 md:p-6 rounded shadow">
+
+                    <table class="w-full text-left border-collapse min-w-[600px]">
+
+                        <thead class="bg-slate-800 text-white">
+                            <tr>
+                                <th class="p-3">ID</th>
+                                <th class="p-3">Nom</th>
+                                <th class="p-3">Description</th>
+                                <th class="p-3">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="table-categories-body">
+                            <!-- Les catégories seront ajoutées ici avec JavaScript -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <!-- Notifications Toast -->
+            <div
+                id="toast-container"
+                class="fixed bottom-4 right-4 left-4 sm:left-auto z-50 flex flex-col gap-2"
+            ></div>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/app.js"></script>
+
+</body>
+</html>
