@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+
+    <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow">
+        <h1 class="text-2xl font-bold mb-6">Ajouter un article</h1>
+
+        <form id="article-form" class="space-y-4">
+
+            <input
+                type="text"
+                id="titre"
+                placeholder="Titre de l'article"
+                class="w-full border border-gray-300 rounded p-2
+                       focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+
+            <select
+                id="categorie"
+                class="w-full border border-gray-300 rounded p-2
+                       focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+                <option value="">Choisir une catégorie</option>
+                <option value="informatique">Informatique</option>
+                <option value="actualites">Actualités</option>
+            </select>
+
+            <button
+                type="submit"
+                id="btn-enregistrer"
+                class="bg-blue-600 text-white px-4 py-2 rounded
+                       hover:bg-blue-700 transition duration-200 ease-in-out
+                       disabled:opacity-75 disabled:cursor-not-allowed"
+            >
+                <span id="btn-text">Enregistrer</span>
+
+                <svg
+                    id="spinner"
+                    class="hidden inline-block w-4 h-4 ml-2 animate-spin"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                >
+                    <circle
+                        class="opacity-25"
+                        cx="12" cy="12" r="10"
+                        stroke="currentColor"
+                        stroke-width="4"
+                    ></circle>
+                    <path
+                        class="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                    ></path>
+                </svg>
+            </button>
+
+        </form>
+
+        <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
